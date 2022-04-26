@@ -13,7 +13,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x07973ccf"
     },
     {
       "constant": true,
@@ -23,20 +24,21 @@
           "type": "uint256"
         }
       ],
-      "name": "activeUsers",
+      "name": "users",
       "outputs": [
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "uint256"
         },
         {
-          "name": "active_ads",
+          "name": "numAds",
           "type": "uint256"
         }
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x365b98b2"
     },
     {
       "constant": true,
@@ -50,7 +52,40 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x9c89dcf3"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "advertisements",
+      "outputs": [
+        {
+          "name": "ownerId",
+          "type": "uint256"
+        },
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "name": "slots",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xbcea610e"
     },
     {
       "constant": false,
@@ -59,21 +94,22 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x25ad91ce"
     },
     {
       "constant": false,
       "inputs": [
         {
-          "name": "user_id",
+          "name": "owner_id",
           "type": "uint256"
         },
         {
-          "name": "_content",
+          "name": "content",
           "type": "string"
         },
         {
-          "name": "_count",
+          "name": "count",
           "type": "uint256"
         }
       ],
@@ -81,23 +117,24 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xf545a8ca"
     }
   ],
-  "bytecode": "0x608060405260008055600060015534801561001957600080fd5b506103b0806100296000396000f3fe60806040526004361061006c5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307973ccf811461007157806325ad91ce14610098578063803ae518146100af5780639c89dcf3146100f2578063f545a8ca14610107575b600080fd5b34801561007d57600080fd5b506100866101c3565b60408051918252519081900360200190f35b3480156100a457600080fd5b506100ad6101c9565b005b3480156100bb57600080fd5b506100d9600480360360208110156100d257600080fd5b503561020a565b6040805192835260208301919091528051918290030190f35b3480156100fe57600080fd5b50610086610223565b34801561011357600080fd5b506100ad6004803603606081101561012a57600080fd5b8135919081019060408101602082013564010000000081111561014c57600080fd5b82018360208201111561015e57600080fd5b8035906020019184600183028401116401000000008311171561018057600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295505091359250610229915050565b60015481565b60018054810190556101d96102b0565b5060408051808201825260018054808352600060208085018281529282526002905293909320915182559151910155565b6002602052600090815260409020805460019091015482565b60005481565b60008054600101905561023a6102c7565b506040805160608101825260008054825260208083018681528385018690528783526002808352858420600180820180548201908190558087529190920184529590932084518155905180519495948694929361029b9385019201906102e9565b50604082015181600201559050505050505050565b604080518082019091526000808252602082015290565b6060604051908101604052806000815260200160608152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061032a57805160ff1916838001178555610357565b82800160010185558215610357579182015b8281111561035757825182559160200191906001019061033c565b50610363929150610367565b5090565b61038191905b80821115610363576000815560010161036d565b9056fea165627a7a7230582079b577487cc33afba33c55b2c4d7087d58cac295617b64d1aca717f2df0ed7350029",
-  "deployedBytecode": "0x60806040526004361061006c5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307973ccf811461007157806325ad91ce14610098578063803ae518146100af5780639c89dcf3146100f2578063f545a8ca14610107575b600080fd5b34801561007d57600080fd5b506100866101c3565b60408051918252519081900360200190f35b3480156100a457600080fd5b506100ad6101c9565b005b3480156100bb57600080fd5b506100d9600480360360208110156100d257600080fd5b503561020a565b6040805192835260208301919091528051918290030190f35b3480156100fe57600080fd5b50610086610223565b34801561011357600080fd5b506100ad6004803603606081101561012a57600080fd5b8135919081019060408101602082013564010000000081111561014c57600080fd5b82018360208201111561015e57600080fd5b8035906020019184600183028401116401000000008311171561018057600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295505091359250610229915050565b60015481565b60018054810190556101d96102b0565b5060408051808201825260018054808352600060208085018281529282526002905293909320915182559151910155565b6002602052600090815260409020805460019091015482565b60005481565b60008054600101905561023a6102c7565b506040805160608101825260008054825260208083018681528385018690528783526002808352858420600180820180548201908190558087529190920184529590932084518155905180519495948694929361029b9385019201906102e9565b50604082015181600201559050505050505050565b604080518082019091526000808252602082015290565b6060604051908101604052806000815260200160608152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061032a57805160ff1916838001178555610357565b82800160010185558215610357579182015b8281111561035757825182559160200191906001019061033c565b50610363929150610367565b5090565b61038191905b80821115610363576000815560010161036d565b9056fea165627a7a7230582079b577487cc33afba33c55b2c4d7087d58cac295617b64d1aca717f2df0ed7350029",
-  "sourceMap": "25:803:0:-;;;72:1;50:23;;103:1;79:25;;25:803;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:803:0;;;;;;;",
-  "deployedSourceMap": "25:803:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;79:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:25:0;;;;;;;;;;;;;;;;;;;;366:176;;8:9:-1;5:2;;;30:1;27;20:12;5:2;366:176:0;;;;;;111:40;;8:9:-1;5:2;;;30:1;27;20:12;5:2;111:40:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;111:40:0;;;;;;;;;;;;;;;;;;;;;;;;;;50:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;50:23:0;;;;548:277;;8:9:-1;5:2;;;30:1;27;20:12;5:2;548:277:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;548:277:0;;;;;;;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;548:277:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;548:277:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;548:277:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;548:277:0;;-1:-1:-1;;548:277:0;;;-1:-1:-1;548:277:0;;-1:-1:-1;;548:277:0;79:25;;;;:::o;366:176::-;405:9;:11;;;;;;426:20;;:::i;:::-;-1:-1:-1;449:43:0;;;;;;;;465:9;;;449:43;;;-1:-1:-1;449:43:0;;;;;;;502:22;;;:11;:22;;;;;;:33;;;;;;;;;366:176::o;111:40::-;;;;;;;;;;;;;;;;;;;:::o;50:23::-;;;;:::o;548:277::-;634:7;:9;;;;;;653:16;;:::i;:::-;-1:-1:-1;672:29:0;;;;;;;;-1:-1:-1;675:7:0;;672:29;;;;;;;;;;;;;;;726:20;;;:11;:20;;;;;;:31;;;;724:33;;;;;;;;767:42;;;:35;;;;:42;;;;;;:51;;;;;;;;672:29;;724:33;672:29;;767:42;;:51;;;;;;;;:::i;:::-;;;;;;;;;;;;;548:277;;;;;:::o;25:803::-;;;;;;;;;;-1:-1:-1;25:803:0;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:803:0;;;-1:-1:-1;25:803:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract AdManager {\n    uint public adCount = 0;\n    uint public userCount = 0;\n\n    mapping(uint => User) public activeUsers;\n\n    struct Ad {\n        uint id;\n        string content;\n        uint pending_count;\n    }\n\n    struct User {\n        uint user_id;\n        uint active_ads;\n        mapping(uint => Ad) advertisements;\n    }\n\n    function createUser() public {\n        userCount++;\n        User memory new_user = User({user_id : userCount, active_ads : 0});\n        activeUsers[userCount] = new_user;\n    }\n\n    function createAd(uint user_id, string memory _content, uint _count) public {\n        adCount++;\n        Ad memory new_ad = Ad(adCount, _content, _count);\n        uint count = ++activeUsers[user_id].active_ads;\n        activeUsers[user_id].advertisements[count] = new_ad;\n    }\n\n}",
-  "sourcePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+  "bytecode": "0x608060405260008055600060015534801561001957600080fd5b5061051d806100296000396000f3fe6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307973ccf811461007c57806325ad91ce146100a3578063365b98b2146100ba5780639c89dcf3146100fd578063bcea610e14610112578063f545a8ca146101c9575b600080fd5b34801561008857600080fd5b50610091610285565b60408051918252519081900360200190f35b3480156100af57600080fd5b506100b861028b565b005b3480156100c657600080fd5b506100e4600480360360208110156100dd57600080fd5b50356102cc565b6040805192835260208301919091528051918290030190f35b34801561010957600080fd5b506100916102e5565b34801561011e57600080fd5b5061013c6004803603602081101561013557600080fd5b50356102eb565b6040518085815260200184815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b8381101561018b578181015183820152602001610173565b50505050905090810190601f1680156101b85780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b3480156101d557600080fd5b506100b8600480360360608110156101ec57600080fd5b8135919081019060408101602082013564010000000081111561020e57600080fd5b82018360208201111561022057600080fd5b8035906020019184600183028401116401000000008311171561024257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550509135925061039a915050565b60015481565b600180548101905561029b610416565b5060408051808201825260018054808352600060208085018281529282526002905293909320915182559151910155565b6002602052600090815260409020805460019091015482565b60005481565b60036020908152600091825260409182902080546001808301546002808501805488519481161561010002600019011691909104601f81018790048702840187019097528683529295909491929183018282801561038a5780601f1061035f5761010080835404028352916020019161038a565b820191906000526020600020905b81548152906001019060200180831161036d57829003601f168201915b5050505050908060030154905084565b6000805460010190556103ab61042d565b50604080516080810182528481526000805460208084018281528486018881526060860188905292845260038252949092208351815593516001850155518051929384939092610402926002850192910190610456565b506060820151816003015590505050505050565b604080518082019091526000808252602082015290565b608060405190810160405280600081526020016000815260200160608152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061049757805160ff19168380011785556104c4565b828001600101855582156104c4579182015b828111156104c45782518255916020019190600101906104a9565b506104d09291506104d4565b5090565b6104ee91905b808211156104d057600081556001016104da565b9056fea165627a7a723058207761913bdd0427348ea0e091ac458f7a5b355c82f0c43b7f1c1ba20245c74d8b0029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307973ccf811461007c57806325ad91ce146100a3578063365b98b2146100ba5780639c89dcf3146100fd578063bcea610e14610112578063f545a8ca146101c9575b600080fd5b34801561008857600080fd5b50610091610285565b60408051918252519081900360200190f35b3480156100af57600080fd5b506100b861028b565b005b3480156100c657600080fd5b506100e4600480360360208110156100dd57600080fd5b50356102cc565b6040805192835260208301919091528051918290030190f35b34801561010957600080fd5b506100916102e5565b34801561011e57600080fd5b5061013c6004803603602081101561013557600080fd5b50356102eb565b6040518085815260200184815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b8381101561018b578181015183820152602001610173565b50505050905090810190601f1680156101b85780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b3480156101d557600080fd5b506100b8600480360360608110156101ec57600080fd5b8135919081019060408101602082013564010000000081111561020e57600080fd5b82018360208201111561022057600080fd5b8035906020019184600183028401116401000000008311171561024257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550509135925061039a915050565b60015481565b600180548101905561029b610416565b5060408051808201825260018054808352600060208085018281529282526002905293909320915182559151910155565b6002602052600090815260409020805460019091015482565b60005481565b60036020908152600091825260409182902080546001808301546002808501805488519481161561010002600019011691909104601f81018790048702840187019097528683529295909491929183018282801561038a5780601f1061035f5761010080835404028352916020019161038a565b820191906000526020600020905b81548152906001019060200180831161036d57829003601f168201915b5050505050908060030154905084565b6000805460010190556103ab61042d565b50604080516080810182528481526000805460208084018281528486018881526060860188905292845260038252949092208351815593516001850155518051929384939092610402926002850192910190610456565b506060820151816003015590505050505050565b604080518082019091526000808252602082015290565b608060405190810160405280600081526020016000815260200160608152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061049757805160ff19168380011785556104c4565b828001600101855582156104c4579182015b828111156104c45782518255916020019190600101906104a9565b506104d09291506104d4565b5090565b6104ee91905b808211156104d057600081556001016104da565b9056fea165627a7a723058207761913bdd0427348ea0e091ac458f7a5b355c82f0c43b7f1c1ba20245c74d8b0029",
+  "sourceMap": "25:705:0:-;;;72:1;50:23;;103:1;79:25;;25:705;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:705:0;;;;;;;",
+  "deployedSourceMap": "25:705:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;79:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:25:0;;;;;;;;;;;;;;;;;;;;372:143;;8:9:-1;5:2;;;30:1;27;20:12;5:2;372:143:0;;;;;;111:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;111:34:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;111:34:0;;;;;;;;;;;;;;;;;;;;;;;;;;50:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;50:23:0;;;;151:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;151:41:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;151:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;151:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;521:207;;8:9:-1;5:2;;;30:1;27;20:12;5:2;521:207:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;521:207:0;;;;;;;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;521:207:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;521:207:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;521:207:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;521:207:0;;-1:-1:-1;;521:207:0;;;-1:-1:-1;521:207:0;;-1:-1:-1;;521:207:0;79:25;;;;:::o;372:143::-;411:9;:11;;;;;;432:19;;:::i;:::-;-1:-1:-1;454:18:0;;;;;;;;459:9;;;454:18;;;-1:-1:-1;454:18:0;;;;;;;482:16;;;:5;:16;;;;;;:26;;;;;;;;;372:143::o;111:34::-;;;;;;;;;;;;;;;;;;;:::o;50:23::-;;;;:::o;151:41::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;151:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;521:207::-;606:7;:9;;;;;;625:15;;:::i;:::-;-1:-1:-1;643:37:0;;;;;;;;;;;-1:-1:-1;656:7:0;;643:37;;;;;;;;;;;;;;;;;;;690:23;;;:14;:23;;;;;;:31;;;;;;;;;;;;;643:37;;;;690:23;;:31;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;521:207;;;;:::o;25:705::-;;;;;;;;;;-1:-1:-1;25:705:0;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:705:0;;;-1:-1:-1;25:705:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract AdManager {\n    uint public adCount = 0;\n    uint public userCount = 0;\n\n    mapping(uint => User) public users;\n    mapping(uint => Ad) public advertisements;\n\n    struct Ad {\n        uint ownerId;\n        uint id;\n        string content;\n        uint slots;\n    }\n\n    struct User {\n        uint userId;\n        uint numAds;\n    }\n\n    function createUser() public {\n        userCount++;\n        User memory newUser = User(userCount, 0);\n        users[userCount] = newUser;\n    }\n\n    function createAd(uint owner_id, string memory content, uint count) public {\n        adCount++;\n        Ad memory newAd = Ad(owner_id, adCount, content, count);\n        advertisements[adCount] = newAd;\n    }\n}",
+  "sourcePath": "/mnt/c/Users/supre/AdvertisementSystemBlockchain/contracts/AdManager.sol",
   "ast": {
-    "absolutePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+    "absolutePath": "/mnt/c/Users/supre/AdvertisementSystemBlockchain/contracts/AdManager.sol",
     "exportedSymbols": {
       "AdManager": [
-        86
+        78
       ]
     },
-    "id": 87,
+    "id": 79,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -117,9 +154,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 86,
+        "id": 78,
         "linearizedBaseContracts": [
-          86
+          78
         ],
         "name": "AdManager",
         "nodeType": "ContractDefinition",
@@ -129,7 +166,7 @@
             "id": 4,
             "name": "adCount",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
+            "scope": 78,
             "src": "50:23:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -172,7 +209,7 @@
             "id": 7,
             "name": "userCount",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
+            "scope": 78,
             "src": "79:25:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -213,14 +250,14 @@
           {
             "constant": false,
             "id": 11,
-            "name": "activeUsers",
+            "name": "users",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
-            "src": "111:40:0",
+            "scope": 78,
+            "src": "111:34:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
               "typeString": "mapping(uint256 => struct AdManager.User)"
             },
             "typeName": {
@@ -238,7 +275,7 @@
               "nodeType": "Mapping",
               "src": "111:21:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
                 "typeString": "mapping(uint256 => struct AdManager.User)"
               },
               "valueType": {
@@ -246,10 +283,10 @@
                 "id": 9,
                 "name": "User",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 27,
+                "referencedDeclaration": 29,
                 "src": "127:4:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_User_$27_storage_ptr",
+                  "typeIdentifier": "t_struct$_User_$29_storage_ptr",
                   "typeString": "struct AdManager.User"
                 }
               }
@@ -258,68 +295,63 @@
             "visibility": "public"
           },
           {
-            "canonicalName": "AdManager.Ad",
-            "id": 18,
-            "members": [
-              {
-                "constant": false,
-                "id": 13,
-                "name": "id",
-                "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "178:7:0",
-                "stateVariable": false,
-                "storageLocation": "default",
+            "constant": false,
+            "id": 15,
+            "name": "advertisements",
+            "nodeType": "VariableDeclaration",
+            "scope": 78,
+            "src": "151:41:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
+              "typeString": "mapping(uint256 => struct AdManager.Ad)"
+            },
+            "typeName": {
+              "id": 14,
+              "keyType": {
+                "id": 12,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "159:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 12,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "178:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
+                }
               },
-              {
-                "constant": false,
-                "id": 15,
-                "name": "content",
-                "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "195:14:0",
-                "stateVariable": false,
-                "storageLocation": "default",
+              "nodeType": "Mapping",
+              "src": "151:19:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
+                "typeString": "mapping(uint256 => struct AdManager.Ad)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 13,
+                "name": "Ad",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 24,
+                "src": "167:2:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 14,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "195:6:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
+                  "typeIdentifier": "t_struct$_Ad_$24_storage_ptr",
+                  "typeString": "struct AdManager.Ad"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "AdManager.Ad",
+            "id": 24,
+            "members": [
               {
                 "constant": false,
                 "id": 17,
-                "name": "pending_count",
+                "name": "ownerId",
                 "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "219:18:0",
+                "scope": 24,
+                "src": "219:12:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -338,112 +370,143 @@
                 },
                 "value": null,
                 "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 19,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "241:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "241:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "258:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "258:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "slots",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "282:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "282:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
               }
             ],
             "name": "Ad",
             "nodeType": "StructDefinition",
-            "scope": 86,
-            "src": "158:86:0",
+            "scope": 78,
+            "src": "199:100:0",
             "visibility": "public"
           },
           {
             "canonicalName": "AdManager.User",
-            "id": 27,
+            "id": 29,
             "members": [
               {
                 "constant": false,
-                "id": 20,
-                "name": "user_id",
-                "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "272:12:0",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_uint256",
-                  "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 19,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "272:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 22,
-                "name": "active_ads",
-                "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "294:15:0",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_uint256",
-                  "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 21,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "294:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
                 "id": 26,
-                "name": "advertisements",
+                "name": "userId",
                 "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "319:34:0",
+                "scope": 29,
+                "src": "327:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
-                  "typeString": "mapping(uint256 => struct AdManager.Ad)"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
                 "typeName": {
                   "id": 25,
-                  "keyType": {
-                    "id": 23,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "327:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "nodeType": "Mapping",
-                  "src": "319:19:0",
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "327:4:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
-                    "typeString": "mapping(uint256 => struct AdManager.Ad)"
-                  },
-                  "valueType": {
-                    "contractScope": null,
-                    "id": 24,
-                    "name": "Ad",
-                    "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "335:2:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_storage_ptr",
-                      "typeString": "struct AdManager.Ad"
-                    }
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 28,
+                "name": "numAds",
+                "nodeType": "VariableDeclaration",
+                "scope": 29,
+                "src": "348:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 27,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "348:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   }
                 },
                 "value": null,
@@ -452,20 +515,20 @@
             ],
             "name": "User",
             "nodeType": "StructDefinition",
-            "scope": 86,
-            "src": "250:110:0",
+            "scope": 78,
+            "src": "305:61:0",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 46,
+              "id": 48,
               "nodeType": "Block",
-              "src": "395:147:0",
+              "src": "401:114:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 31,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -473,15 +536,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "405:11:0",
+                    "src": "411:11:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 30,
+                      "id": 32,
                       "name": "userCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "405:9:0",
+                      "src": "411:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -492,37 +555,37 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 32,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "405:11:0"
+                  "src": "411:11:0"
                 },
                 {
                   "assignments": [
-                    34
+                    36
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 34,
-                      "name": "new_user",
+                      "id": 36,
+                      "name": "newUser",
                       "nodeType": "VariableDeclaration",
-                      "scope": 46,
-                      "src": "426:20:0",
+                      "scope": 48,
+                      "src": "432:19:0",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_memory_ptr",
+                        "typeIdentifier": "t_struct$_User_$29_memory_ptr",
                         "typeString": "struct AdManager.User"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 33,
+                        "id": 35,
                         "name": "User",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 27,
-                        "src": "426:4:0",
+                        "referencedDeclaration": 29,
+                        "src": "432:4:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_User_$27_storage_ptr",
+                          "typeIdentifier": "t_struct$_User_$29_storage_ptr",
                           "typeString": "struct AdManager.User"
                         }
                       },
@@ -530,18 +593,18 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 39,
+                  "id": 41,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 36,
+                        "id": 38,
                         "name": "userCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 7,
-                        "src": "465:9:0",
+                        "src": "459:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -550,14 +613,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "30",
-                        "id": 37,
+                        "id": 39,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "489:1:0",
+                        "src": "470:1:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
@@ -567,42 +630,48 @@
                       }
                     ],
                     "expression": {
-                      "argumentTypes": null,
-                      "id": 35,
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 37,
                       "name": "User",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 27,
-                      "src": "449:4:0",
+                      "referencedDeclaration": 29,
+                      "src": "454:4:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_User_$27_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_User_$29_storage_ptr_$",
                         "typeString": "type(struct AdManager.User storage pointer)"
                       }
                     },
-                    "id": 38,
+                    "id": 40,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "kind": "structConstructorCall",
                     "lValueRequested": false,
-                    "names": [
-                      "user_id",
-                      "active_ads"
-                    ],
+                    "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "449:43:0",
+                    "src": "454:18:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_User_$27_memory",
+                      "typeIdentifier": "t_struct$_User_$29_memory",
                       "typeString": "struct AdManager.User memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "426:66:0"
+                  "src": "432:40:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 44,
+                    "id": 46,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -611,26 +680,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 40,
-                        "name": "activeUsers",
+                        "id": 42,
+                        "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "502:11:0",
+                        "src": "482:5:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
                           "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
                         }
                       },
-                      "id": 42,
+                      "id": 44,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 41,
+                        "id": 43,
                         "name": "userCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 7,
-                        "src": "514:9:0",
+                        "src": "488:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -641,9 +710,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "502:22:0",
+                      "src": "482:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_storage",
+                        "typeIdentifier": "t_struct$_User_$29_storage",
                         "typeString": "struct AdManager.User storage ref"
                       }
                     },
@@ -651,64 +720,64 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 43,
-                      "name": "new_user",
+                      "id": 45,
+                      "name": "newUser",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 34,
-                      "src": "527:8:0",
+                      "referencedDeclaration": 36,
+                      "src": "501:7:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_memory_ptr",
+                        "typeIdentifier": "t_struct$_User_$29_memory_ptr",
                         "typeString": "struct AdManager.User memory"
                       }
                     },
-                    "src": "502:33:0",
+                    "src": "482:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_User_$27_storage",
+                      "typeIdentifier": "t_struct$_User_$29_storage",
                       "typeString": "struct AdManager.User storage ref"
                     }
                   },
-                  "id": 45,
+                  "id": 47,
                   "nodeType": "ExpressionStatement",
-                  "src": "502:33:0"
+                  "src": "482:26:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 47,
+            "id": 49,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createUser",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 28,
+              "id": 30,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "385:2:0"
+              "src": "391:2:0"
             },
             "returnParameters": {
-              "id": 29,
+              "id": 31,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "395:0:0"
+              "src": "401:0:0"
             },
-            "scope": 86,
-            "src": "366:176:0",
+            "scope": 78,
+            "src": "372:143:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 84,
+              "id": 76,
               "nodeType": "Block",
-              "src": "624:201:0",
+              "src": "596:132:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 57,
+                    "id": 59,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -716,15 +785,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "634:9:0",
+                    "src": "606:9:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 56,
+                      "id": 58,
                       "name": "adCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "634:7:0",
+                      "src": "606:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -735,37 +804,37 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 58,
+                  "id": 60,
                   "nodeType": "ExpressionStatement",
-                  "src": "634:9:0"
+                  "src": "606:9:0"
                 },
                 {
                   "assignments": [
-                    60
+                    62
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 60,
-                      "name": "new_ad",
+                      "id": 62,
+                      "name": "newAd",
                       "nodeType": "VariableDeclaration",
-                      "scope": 84,
-                      "src": "653:16:0",
+                      "scope": 76,
+                      "src": "625:15:0",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_memory_ptr",
+                        "typeIdentifier": "t_struct$_Ad_$24_memory_ptr",
                         "typeString": "struct AdManager.Ad"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 59,
+                        "id": 61,
                         "name": "Ad",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 18,
-                        "src": "653:2:0",
+                        "referencedDeclaration": 24,
+                        "src": "625:2:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Ad_$18_storage_ptr",
+                          "typeIdentifier": "t_struct$_Ad_$24_storage_ptr",
                           "typeString": "struct AdManager.Ad"
                         }
                       },
@@ -773,18 +842,18 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 66,
+                  "id": 69,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 62,
-                        "name": "adCount",
+                        "id": 64,
+                        "name": "owner_id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4,
-                        "src": "675:7:0",
+                        "referencedDeclaration": 51,
+                        "src": "646:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -792,12 +861,25 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 63,
-                        "name": "_content",
+                        "id": 65,
+                        "name": "adCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 51,
-                        "src": "684:8:0",
+                        "referencedDeclaration": 4,
+                        "src": "656:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 66,
+                        "name": "content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 53,
+                        "src": "665:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -805,12 +887,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 64,
-                        "name": "_count",
+                        "id": 67,
+                        "name": "count",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 53,
-                        "src": "694:6:0",
+                        "referencedDeclaration": 55,
+                        "src": "674:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -824,6 +906,10 @@
                           "typeString": "uint256"
                         },
                         {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         },
@@ -832,18 +918,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 61,
+                      "id": 63,
                       "name": "Ad",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 18,
-                      "src": "672:2:0",
+                      "referencedDeclaration": 24,
+                      "src": "643:2:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Ad_$18_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Ad_$24_storage_ptr_$",
                         "typeString": "type(struct AdManager.Ad storage pointer)"
                       }
                     },
-                    "id": 65,
+                    "id": 68,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -851,127 +937,19 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "672:29:0",
+                    "src": "643:37:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_memory",
+                      "typeIdentifier": "t_struct$_Ad_$24_memory",
                       "typeString": "struct AdManager.Ad memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "653:48:0"
-                },
-                {
-                  "assignments": [
-                    68
-                  ],
-                  "declarations": [
-                    {
-                      "constant": false,
-                      "id": 68,
-                      "name": "count",
-                      "nodeType": "VariableDeclaration",
-                      "scope": 84,
-                      "src": "711:10:0",
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
-                      },
-                      "typeName": {
-                        "id": 67,
-                        "name": "uint",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "711:4:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_uint256",
-                          "typeString": "uint256"
-                        }
-                      },
-                      "value": null,
-                      "visibility": "internal"
-                    }
-                  ],
-                  "id": 74,
-                  "initialValue": {
-                    "argumentTypes": null,
-                    "id": 73,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "nodeType": "UnaryOperation",
-                    "operator": "++",
-                    "prefix": true,
-                    "src": "724:33:0",
-                    "subExpression": {
-                      "argumentTypes": null,
-                      "expression": {
-                        "argumentTypes": null,
-                        "baseExpression": {
-                          "argumentTypes": null,
-                          "id": 69,
-                          "name": "activeUsers",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 11,
-                          "src": "726:11:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
-                            "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
-                          }
-                        },
-                        "id": 71,
-                        "indexExpression": {
-                          "argumentTypes": null,
-                          "id": 70,
-                          "name": "user_id",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 49,
-                          "src": "738:7:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_uint256",
-                            "typeString": "uint256"
-                          }
-                        },
-                        "isConstant": false,
-                        "isLValue": true,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "nodeType": "IndexAccess",
-                        "src": "726:20:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_User_$27_storage",
-                          "typeString": "struct AdManager.User storage ref"
-                        }
-                      },
-                      "id": 72,
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": true,
-                      "memberName": "active_ads",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": 22,
-                      "src": "726:31:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
-                      }
-                    },
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "nodeType": "VariableDeclarationStatement",
-                  "src": "711:46:0"
+                  "src": "625:55:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 82,
+                    "id": 74,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -980,69 +958,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "expression": {
-                          "argumentTypes": null,
-                          "baseExpression": {
-                            "argumentTypes": null,
-                            "id": 75,
-                            "name": "activeUsers",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 11,
-                            "src": "767:11:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
-                              "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
-                            }
-                          },
-                          "id": 77,
-                          "indexExpression": {
-                            "argumentTypes": null,
-                            "id": 76,
-                            "name": "user_id",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 49,
-                            "src": "779:7:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          },
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "nodeType": "IndexAccess",
-                          "src": "767:20:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_User_$27_storage",
-                            "typeString": "struct AdManager.User storage ref"
-                          }
-                        },
-                        "id": 78,
-                        "isConstant": false,
-                        "isLValue": true,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberName": "advertisements",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 26,
-                        "src": "767:35:0",
+                        "id": 70,
+                        "name": "advertisements",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "690:14:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
                           "typeString": "mapping(uint256 => struct AdManager.Ad storage ref)"
                         }
                       },
-                      "id": 80,
+                      "id": 72,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 79,
-                        "name": "count",
+                        "id": 71,
+                        "name": "adCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68,
-                        "src": "803:5:0",
+                        "referencedDeclaration": 4,
+                        "src": "705:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1053,9 +988,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "767:42:0",
+                      "src": "690:23:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_storage",
+                        "typeIdentifier": "t_struct$_Ad_$24_storage",
                         "typeString": "struct AdManager.Ad storage ref"
                       }
                     },
@@ -1063,47 +998,47 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 81,
-                      "name": "new_ad",
+                      "id": 73,
+                      "name": "newAd",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 60,
-                      "src": "812:6:0",
+                      "referencedDeclaration": 62,
+                      "src": "716:5:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_memory_ptr",
+                        "typeIdentifier": "t_struct$_Ad_$24_memory_ptr",
                         "typeString": "struct AdManager.Ad memory"
                       }
                     },
-                    "src": "767:51:0",
+                    "src": "690:31:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_storage",
+                      "typeIdentifier": "t_struct$_Ad_$24_storage",
                       "typeString": "struct AdManager.Ad storage ref"
                     }
                   },
-                  "id": 83,
+                  "id": 75,
                   "nodeType": "ExpressionStatement",
-                  "src": "767:51:0"
+                  "src": "690:31:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 85,
+            "id": 77,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createAd",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 54,
+              "id": 56,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 49,
-                  "name": "user_id",
+                  "id": 51,
+                  "name": "owner_id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "566:12:0",
+                  "scope": 77,
+                  "src": "539:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1111,10 +1046,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 48,
+                    "id": 50,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "566:4:0",
+                    "src": "539:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1125,11 +1060,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 51,
-                  "name": "_content",
+                  "id": 53,
+                  "name": "content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "580:22:0",
+                  "scope": 77,
+                  "src": "554:21:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1137,10 +1072,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 50,
+                    "id": 52,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:6:0",
+                    "src": "554:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1151,11 +1086,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 53,
-                  "name": "_count",
+                  "id": 55,
+                  "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "604:11:0",
+                  "scope": 77,
+                  "src": "577:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1163,10 +1098,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 52,
+                    "id": 54,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "604:4:0",
+                    "src": "577:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1176,35 +1111,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "565:51:0"
+              "src": "538:50:0"
             },
             "returnParameters": {
-              "id": 55,
+              "id": 57,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "624:0:0"
+              "src": "596:0:0"
             },
-            "scope": 86,
-            "src": "548:277:0",
+            "scope": 78,
+            "src": "521:207:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 87,
-        "src": "25:803:0"
+        "scope": 79,
+        "src": "25:705:0"
       }
     ],
-    "src": "0:828:0"
+    "src": "0:730:0"
   },
   "legacyAST": {
-    "absolutePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+    "absolutePath": "/mnt/c/Users/supre/AdvertisementSystemBlockchain/contracts/AdManager.sol",
     "exportedSymbols": {
       "AdManager": [
-        86
+        78
       ]
     },
-    "id": 87,
+    "id": 79,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -1224,9 +1159,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 86,
+        "id": 78,
         "linearizedBaseContracts": [
-          86
+          78
         ],
         "name": "AdManager",
         "nodeType": "ContractDefinition",
@@ -1236,7 +1171,7 @@
             "id": 4,
             "name": "adCount",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
+            "scope": 78,
             "src": "50:23:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1279,7 +1214,7 @@
             "id": 7,
             "name": "userCount",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
+            "scope": 78,
             "src": "79:25:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1320,14 +1255,14 @@
           {
             "constant": false,
             "id": 11,
-            "name": "activeUsers",
+            "name": "users",
             "nodeType": "VariableDeclaration",
-            "scope": 86,
-            "src": "111:40:0",
+            "scope": 78,
+            "src": "111:34:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
               "typeString": "mapping(uint256 => struct AdManager.User)"
             },
             "typeName": {
@@ -1345,7 +1280,7 @@
               "nodeType": "Mapping",
               "src": "111:21:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
                 "typeString": "mapping(uint256 => struct AdManager.User)"
               },
               "valueType": {
@@ -1353,10 +1288,10 @@
                 "id": 9,
                 "name": "User",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 27,
+                "referencedDeclaration": 29,
                 "src": "127:4:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_User_$27_storage_ptr",
+                  "typeIdentifier": "t_struct$_User_$29_storage_ptr",
                   "typeString": "struct AdManager.User"
                 }
               }
@@ -1365,68 +1300,63 @@
             "visibility": "public"
           },
           {
-            "canonicalName": "AdManager.Ad",
-            "id": 18,
-            "members": [
-              {
-                "constant": false,
-                "id": 13,
-                "name": "id",
-                "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "178:7:0",
-                "stateVariable": false,
-                "storageLocation": "default",
+            "constant": false,
+            "id": 15,
+            "name": "advertisements",
+            "nodeType": "VariableDeclaration",
+            "scope": 78,
+            "src": "151:41:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
+              "typeString": "mapping(uint256 => struct AdManager.Ad)"
+            },
+            "typeName": {
+              "id": 14,
+              "keyType": {
+                "id": 12,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "159:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 12,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "178:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
+                }
               },
-              {
-                "constant": false,
-                "id": 15,
-                "name": "content",
-                "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "195:14:0",
-                "stateVariable": false,
-                "storageLocation": "default",
+              "nodeType": "Mapping",
+              "src": "151:19:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
+                "typeString": "mapping(uint256 => struct AdManager.Ad)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 13,
+                "name": "Ad",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 24,
+                "src": "167:2:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 14,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "195:6:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
+                  "typeIdentifier": "t_struct$_Ad_$24_storage_ptr",
+                  "typeString": "struct AdManager.Ad"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "AdManager.Ad",
+            "id": 24,
+            "members": [
               {
                 "constant": false,
                 "id": 17,
-                "name": "pending_count",
+                "name": "ownerId",
                 "nodeType": "VariableDeclaration",
-                "scope": 18,
-                "src": "219:18:0",
+                "scope": 24,
+                "src": "219:12:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1445,112 +1375,143 @@
                 },
                 "value": null,
                 "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 19,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "241:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "241:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "258:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "258:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "slots",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "282:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "282:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
               }
             ],
             "name": "Ad",
             "nodeType": "StructDefinition",
-            "scope": 86,
-            "src": "158:86:0",
+            "scope": 78,
+            "src": "199:100:0",
             "visibility": "public"
           },
           {
             "canonicalName": "AdManager.User",
-            "id": 27,
+            "id": 29,
             "members": [
               {
                 "constant": false,
-                "id": 20,
-                "name": "user_id",
-                "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "272:12:0",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_uint256",
-                  "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 19,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "272:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 22,
-                "name": "active_ads",
-                "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "294:15:0",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_uint256",
-                  "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 21,
-                  "name": "uint",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "294:4:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
                 "id": 26,
-                "name": "advertisements",
+                "name": "userId",
                 "nodeType": "VariableDeclaration",
-                "scope": 27,
-                "src": "319:34:0",
+                "scope": 29,
+                "src": "327:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
-                  "typeString": "mapping(uint256 => struct AdManager.Ad)"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
                 "typeName": {
                   "id": 25,
-                  "keyType": {
-                    "id": 23,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "327:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "nodeType": "Mapping",
-                  "src": "319:19:0",
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "327:4:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
-                    "typeString": "mapping(uint256 => struct AdManager.Ad)"
-                  },
-                  "valueType": {
-                    "contractScope": null,
-                    "id": 24,
-                    "name": "Ad",
-                    "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "335:2:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_storage_ptr",
-                      "typeString": "struct AdManager.Ad"
-                    }
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 28,
+                "name": "numAds",
+                "nodeType": "VariableDeclaration",
+                "scope": 29,
+                "src": "348:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 27,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "348:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   }
                 },
                 "value": null,
@@ -1559,20 +1520,20 @@
             ],
             "name": "User",
             "nodeType": "StructDefinition",
-            "scope": 86,
-            "src": "250:110:0",
+            "scope": 78,
+            "src": "305:61:0",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 46,
+              "id": 48,
               "nodeType": "Block",
-              "src": "395:147:0",
+              "src": "401:114:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 31,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1580,15 +1541,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "405:11:0",
+                    "src": "411:11:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 30,
+                      "id": 32,
                       "name": "userCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "405:9:0",
+                      "src": "411:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1599,37 +1560,37 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 32,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "405:11:0"
+                  "src": "411:11:0"
                 },
                 {
                   "assignments": [
-                    34
+                    36
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 34,
-                      "name": "new_user",
+                      "id": 36,
+                      "name": "newUser",
                       "nodeType": "VariableDeclaration",
-                      "scope": 46,
-                      "src": "426:20:0",
+                      "scope": 48,
+                      "src": "432:19:0",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_memory_ptr",
+                        "typeIdentifier": "t_struct$_User_$29_memory_ptr",
                         "typeString": "struct AdManager.User"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 33,
+                        "id": 35,
                         "name": "User",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 27,
-                        "src": "426:4:0",
+                        "referencedDeclaration": 29,
+                        "src": "432:4:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_User_$27_storage_ptr",
+                          "typeIdentifier": "t_struct$_User_$29_storage_ptr",
                           "typeString": "struct AdManager.User"
                         }
                       },
@@ -1637,18 +1598,18 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 39,
+                  "id": 41,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 36,
+                        "id": 38,
                         "name": "userCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 7,
-                        "src": "465:9:0",
+                        "src": "459:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1657,14 +1618,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "30",
-                        "id": 37,
+                        "id": 39,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "489:1:0",
+                        "src": "470:1:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
@@ -1674,42 +1635,48 @@
                       }
                     ],
                     "expression": {
-                      "argumentTypes": null,
-                      "id": 35,
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 37,
                       "name": "User",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 27,
-                      "src": "449:4:0",
+                      "referencedDeclaration": 29,
+                      "src": "454:4:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_User_$27_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_User_$29_storage_ptr_$",
                         "typeString": "type(struct AdManager.User storage pointer)"
                       }
                     },
-                    "id": 38,
+                    "id": 40,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "kind": "structConstructorCall",
                     "lValueRequested": false,
-                    "names": [
-                      "user_id",
-                      "active_ads"
-                    ],
+                    "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "449:43:0",
+                    "src": "454:18:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_User_$27_memory",
+                      "typeIdentifier": "t_struct$_User_$29_memory",
                       "typeString": "struct AdManager.User memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "426:66:0"
+                  "src": "432:40:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 44,
+                    "id": 46,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1718,26 +1685,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 40,
-                        "name": "activeUsers",
+                        "id": 42,
+                        "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "502:11:0",
+                        "src": "482:5:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$29_storage_$",
                           "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
                         }
                       },
-                      "id": 42,
+                      "id": 44,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 41,
+                        "id": 43,
                         "name": "userCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 7,
-                        "src": "514:9:0",
+                        "src": "488:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1748,9 +1715,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "502:22:0",
+                      "src": "482:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_storage",
+                        "typeIdentifier": "t_struct$_User_$29_storage",
                         "typeString": "struct AdManager.User storage ref"
                       }
                     },
@@ -1758,64 +1725,64 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 43,
-                      "name": "new_user",
+                      "id": 45,
+                      "name": "newUser",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 34,
-                      "src": "527:8:0",
+                      "referencedDeclaration": 36,
+                      "src": "501:7:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_User_$27_memory_ptr",
+                        "typeIdentifier": "t_struct$_User_$29_memory_ptr",
                         "typeString": "struct AdManager.User memory"
                       }
                     },
-                    "src": "502:33:0",
+                    "src": "482:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_User_$27_storage",
+                      "typeIdentifier": "t_struct$_User_$29_storage",
                       "typeString": "struct AdManager.User storage ref"
                     }
                   },
-                  "id": 45,
+                  "id": 47,
                   "nodeType": "ExpressionStatement",
-                  "src": "502:33:0"
+                  "src": "482:26:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 47,
+            "id": 49,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createUser",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 28,
+              "id": 30,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "385:2:0"
+              "src": "391:2:0"
             },
             "returnParameters": {
-              "id": 29,
+              "id": 31,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "395:0:0"
+              "src": "401:0:0"
             },
-            "scope": 86,
-            "src": "366:176:0",
+            "scope": 78,
+            "src": "372:143:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 84,
+              "id": 76,
               "nodeType": "Block",
-              "src": "624:201:0",
+              "src": "596:132:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 57,
+                    "id": 59,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1823,15 +1790,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "634:9:0",
+                    "src": "606:9:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 56,
+                      "id": 58,
                       "name": "adCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "634:7:0",
+                      "src": "606:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1842,37 +1809,37 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 58,
+                  "id": 60,
                   "nodeType": "ExpressionStatement",
-                  "src": "634:9:0"
+                  "src": "606:9:0"
                 },
                 {
                   "assignments": [
-                    60
+                    62
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 60,
-                      "name": "new_ad",
+                      "id": 62,
+                      "name": "newAd",
                       "nodeType": "VariableDeclaration",
-                      "scope": 84,
-                      "src": "653:16:0",
+                      "scope": 76,
+                      "src": "625:15:0",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_memory_ptr",
+                        "typeIdentifier": "t_struct$_Ad_$24_memory_ptr",
                         "typeString": "struct AdManager.Ad"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 59,
+                        "id": 61,
                         "name": "Ad",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 18,
-                        "src": "653:2:0",
+                        "referencedDeclaration": 24,
+                        "src": "625:2:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Ad_$18_storage_ptr",
+                          "typeIdentifier": "t_struct$_Ad_$24_storage_ptr",
                           "typeString": "struct AdManager.Ad"
                         }
                       },
@@ -1880,18 +1847,18 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 66,
+                  "id": 69,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 62,
-                        "name": "adCount",
+                        "id": 64,
+                        "name": "owner_id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4,
-                        "src": "675:7:0",
+                        "referencedDeclaration": 51,
+                        "src": "646:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1899,12 +1866,25 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 63,
-                        "name": "_content",
+                        "id": 65,
+                        "name": "adCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 51,
-                        "src": "684:8:0",
+                        "referencedDeclaration": 4,
+                        "src": "656:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 66,
+                        "name": "content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 53,
+                        "src": "665:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1912,12 +1892,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 64,
-                        "name": "_count",
+                        "id": 67,
+                        "name": "count",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 53,
-                        "src": "694:6:0",
+                        "referencedDeclaration": 55,
+                        "src": "674:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1931,6 +1911,10 @@
                           "typeString": "uint256"
                         },
                         {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         },
@@ -1939,18 +1923,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 61,
+                      "id": 63,
                       "name": "Ad",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 18,
-                      "src": "672:2:0",
+                      "referencedDeclaration": 24,
+                      "src": "643:2:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Ad_$18_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Ad_$24_storage_ptr_$",
                         "typeString": "type(struct AdManager.Ad storage pointer)"
                       }
                     },
-                    "id": 65,
+                    "id": 68,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1958,127 +1942,19 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "672:29:0",
+                    "src": "643:37:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_memory",
+                      "typeIdentifier": "t_struct$_Ad_$24_memory",
                       "typeString": "struct AdManager.Ad memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "653:48:0"
-                },
-                {
-                  "assignments": [
-                    68
-                  ],
-                  "declarations": [
-                    {
-                      "constant": false,
-                      "id": 68,
-                      "name": "count",
-                      "nodeType": "VariableDeclaration",
-                      "scope": 84,
-                      "src": "711:10:0",
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
-                      },
-                      "typeName": {
-                        "id": 67,
-                        "name": "uint",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "711:4:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_uint256",
-                          "typeString": "uint256"
-                        }
-                      },
-                      "value": null,
-                      "visibility": "internal"
-                    }
-                  ],
-                  "id": 74,
-                  "initialValue": {
-                    "argumentTypes": null,
-                    "id": 73,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "nodeType": "UnaryOperation",
-                    "operator": "++",
-                    "prefix": true,
-                    "src": "724:33:0",
-                    "subExpression": {
-                      "argumentTypes": null,
-                      "expression": {
-                        "argumentTypes": null,
-                        "baseExpression": {
-                          "argumentTypes": null,
-                          "id": 69,
-                          "name": "activeUsers",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 11,
-                          "src": "726:11:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
-                            "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
-                          }
-                        },
-                        "id": 71,
-                        "indexExpression": {
-                          "argumentTypes": null,
-                          "id": 70,
-                          "name": "user_id",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 49,
-                          "src": "738:7:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_uint256",
-                            "typeString": "uint256"
-                          }
-                        },
-                        "isConstant": false,
-                        "isLValue": true,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "nodeType": "IndexAccess",
-                        "src": "726:20:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_User_$27_storage",
-                          "typeString": "struct AdManager.User storage ref"
-                        }
-                      },
-                      "id": 72,
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": true,
-                      "memberName": "active_ads",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": 22,
-                      "src": "726:31:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
-                      }
-                    },
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "nodeType": "VariableDeclarationStatement",
-                  "src": "711:46:0"
+                  "src": "625:55:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 82,
+                    "id": 74,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2087,69 +1963,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "expression": {
-                          "argumentTypes": null,
-                          "baseExpression": {
-                            "argumentTypes": null,
-                            "id": 75,
-                            "name": "activeUsers",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 11,
-                            "src": "767:11:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_User_$27_storage_$",
-                              "typeString": "mapping(uint256 => struct AdManager.User storage ref)"
-                            }
-                          },
-                          "id": 77,
-                          "indexExpression": {
-                            "argumentTypes": null,
-                            "id": 76,
-                            "name": "user_id",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 49,
-                            "src": "779:7:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          },
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "nodeType": "IndexAccess",
-                          "src": "767:20:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_User_$27_storage",
-                            "typeString": "struct AdManager.User storage ref"
-                          }
-                        },
-                        "id": 78,
-                        "isConstant": false,
-                        "isLValue": true,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberName": "advertisements",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 26,
-                        "src": "767:35:0",
+                        "id": 70,
+                        "name": "advertisements",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "690:14:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$18_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Ad_$24_storage_$",
                           "typeString": "mapping(uint256 => struct AdManager.Ad storage ref)"
                         }
                       },
-                      "id": 80,
+                      "id": 72,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 79,
-                        "name": "count",
+                        "id": 71,
+                        "name": "adCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68,
-                        "src": "803:5:0",
+                        "referencedDeclaration": 4,
+                        "src": "705:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2160,9 +1993,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "767:42:0",
+                      "src": "690:23:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_storage",
+                        "typeIdentifier": "t_struct$_Ad_$24_storage",
                         "typeString": "struct AdManager.Ad storage ref"
                       }
                     },
@@ -2170,47 +2003,47 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 81,
-                      "name": "new_ad",
+                      "id": 73,
+                      "name": "newAd",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 60,
-                      "src": "812:6:0",
+                      "referencedDeclaration": 62,
+                      "src": "716:5:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Ad_$18_memory_ptr",
+                        "typeIdentifier": "t_struct$_Ad_$24_memory_ptr",
                         "typeString": "struct AdManager.Ad memory"
                       }
                     },
-                    "src": "767:51:0",
+                    "src": "690:31:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Ad_$18_storage",
+                      "typeIdentifier": "t_struct$_Ad_$24_storage",
                       "typeString": "struct AdManager.Ad storage ref"
                     }
                   },
-                  "id": 83,
+                  "id": 75,
                   "nodeType": "ExpressionStatement",
-                  "src": "767:51:0"
+                  "src": "690:31:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 85,
+            "id": 77,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createAd",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 54,
+              "id": 56,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 49,
-                  "name": "user_id",
+                  "id": 51,
+                  "name": "owner_id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "566:12:0",
+                  "scope": 77,
+                  "src": "539:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2218,10 +2051,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 48,
+                    "id": 50,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "566:4:0",
+                    "src": "539:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2232,11 +2065,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 51,
-                  "name": "_content",
+                  "id": 53,
+                  "name": "content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "580:22:0",
+                  "scope": 77,
+                  "src": "554:21:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2244,10 +2077,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 50,
+                    "id": 52,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:6:0",
+                    "src": "554:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2258,11 +2091,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 53,
-                  "name": "_count",
+                  "id": 55,
+                  "name": "count",
                   "nodeType": "VariableDeclaration",
-                  "scope": 85,
-                  "src": "604:11:0",
+                  "scope": 77,
+                  "src": "577:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2270,10 +2103,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 52,
+                    "id": 54,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "604:4:0",
+                    "src": "577:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2283,26 +2116,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "565:51:0"
+              "src": "538:50:0"
             },
             "returnParameters": {
-              "id": 55,
+              "id": 57,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "624:0:0"
+              "src": "596:0:0"
             },
-            "scope": 86,
-            "src": "548:277:0",
+            "scope": 78,
+            "src": "521:207:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 87,
-        "src": "25:803:0"
+        "scope": 79,
+        "src": "25:705:0"
       }
     ],
-    "src": "0:828:0"
+    "src": "0:730:0"
   },
   "compiler": {
     "name": "solc",
@@ -2326,10 +2159,16 @@
       "links": {},
       "address": "0x00A5D482a70C3597fad9106E486BF266DAbd8FeD",
       "transactionHash": "0x6b67622aff3641cb8ac71aef0925ecb15cfdf37ece3e9e89e34ef628e87224b9"
+    },
+    "1650976176586": {
+      "events": {},
+      "links": {},
+      "address": "0x6a3FDefB1714FFAc3438F814ecc0Ffe977134808",
+      "transactionHash": "0x11ab6dd53524a71af06c2e41c472d23d66e53881c02d930630bbb587a47fac0d"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2022-04-26T06:24:36.448Z",
+  "updatedAt": "2022-04-26T13:51:17.188Z",
   "devdoc": {
     "methods": {}
   },

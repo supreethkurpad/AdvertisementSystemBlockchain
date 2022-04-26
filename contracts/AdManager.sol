@@ -4,31 +4,30 @@ contract AdManager {
     uint public adCount = 0;
     uint public userCount = 0;
 
-    mapping(uint => User) public activeUsers;
+    mapping(uint => User) public users;
+    mapping(uint => Ad) public advertisements;
 
     struct Ad {
+        uint ownerId;
         uint id;
         string content;
-        uint pending_count;
+        uint slots;
     }
 
     struct User {
-        uint user_id;
-        uint active_ads;
-        mapping(uint => Ad) advertisements;
+        uint userId;
+        uint numAds;
     }
 
     function createUser() public {
         userCount++;
-        User memory new_user = User({user_id : userCount, active_ads : 0});
-        activeUsers[userCount] = new_user;
+        User memory newUser = User(userCount, 0);
+        users[userCount] = newUser;
     }
 
-    function createAd(uint user_id, string memory _content, uint _count) public {
+    function createAd(uint owner_id, string memory content, uint count) public {
         adCount++;
-        Ad memory new_ad = Ad(adCount, _content, _count);
-        uint count = ++activeUsers[user_id].active_ads;
-        activeUsers[user_id].advertisements[count] = new_ad;
+        Ad memory newAd = Ad(owner_id, adCount, content, count);
+        advertisements[adCount] = newAd;
     }
-
 }

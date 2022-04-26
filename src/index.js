@@ -1,7 +1,10 @@
 App = {
+    contracts: {},
     load: async() => {
         await App.loadWeb3()
+        await App.loadAccount()
         await App.loadContract()
+        await App.createUser()
     },
     loadWeb3: async () => {
         if (window.ethereum) {
@@ -26,9 +29,19 @@ App = {
             console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         }
     },
+    loadAccount: async () => {
+        const accounts = await web3.eth.getAccounts();
+        App.account = accounts[0];
+    },
     loadContract: async() => {
         const adm = await $.getJSON('AdManager.json')
-        console.log(adm)
+        App.contracts.AdManager = TruffleContract(adm)
+        App.contracts.AdManager.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+        App.AdManager = await App.contracts.AdManager.deployed()
+    },
+    createUser: async () => {
+        await App.AdManager.createUser({from:  App.account})
+        console.log(await App.AdManager.users(1))
     }
 }
 

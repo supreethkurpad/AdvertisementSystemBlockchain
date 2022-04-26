@@ -1,0 +1,220 @@
+{
+  "contractName": "AdManager",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "adCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x9c89dcf3"
+    }
+  ],
+  "bytecode": "0x60806040526000805463ffffffff1916905534801561001d57600080fd5b5060a68061002c6000396000f3fe608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639c89dcf381146043575b600080fd5b348015604e57600080fd5b506055606e565b6040805163ffffffff9092168252519081900360200190f35b60005463ffffffff168156fea165627a7a72305820074dfb6a8b2ac44741414b5fb933aab4a800a3a258118fa2bba605b4ec2109830029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416639c89dcf381146043575b600080fd5b348015604e57600080fd5b506055606e565b6040805163ffffffff9092168252519081900360200190f35b60005463ffffffff168156fea165627a7a72305820074dfb6a8b2ac44741414b5fb933aab4a800a3a258118fa2bba605b4ec2109830029",
+  "sourceMap": "25:53:0:-;;;74:1;50:25;;-1:-1:-1;;50:25:0;;;25:53;5:2:-1;;;;30:1;27;20:12;5:2;25:53:0;;;;;;;",
+  "deployedSourceMap": "25:53:0:-;;;;;;;;;;;;;;;;;;;;;;;50:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;50:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract AdManager {\n    uint32 public adCount = 0;\n}",
+  "sourcePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+  "ast": {
+    "absolutePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+    "exportedSymbols": {
+      "AdManager": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "AdManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "adCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "50:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint32",
+              "typeString": "uint32"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint32",
+              "nodeType": "ElementaryTypeName",
+              "src": "50:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint32",
+                "typeString": "uint32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "74:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 6,
+        "src": "25:53:0"
+      }
+    ],
+    "src": "0:78:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/mnt/c/Users/supre/BC/contracts/AdManager.sol",
+    "exportedSymbols": {
+      "AdManager": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "AdManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "adCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "50:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint32",
+              "typeString": "uint32"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint32",
+              "nodeType": "ElementaryTypeName",
+              "src": "50:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint32",
+                "typeString": "uint32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "74:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 6,
+        "src": "25:53:0"
+      }
+    ],
+    "src": "0:78:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "1650947220501": {
+      "events": {},
+      "links": {},
+      "address": "0x643348fD154Ef063601E7eEAa1087Df11eb159B9",
+      "transactionHash": "0x25e3d3e59d46c9b68c01f36a586aab5b1da791c263e949114ebf4e237bdf952a"
+    },
+    "1650947441486": {
+      "events": {},
+      "links": {},
+      "address": "0x349C18fc96D0A55547714da17928e101ae9e4656",
+      "transactionHash": "0xa92acac05841fc2224fef5bdc03638c636578e5f5e9264256c468e91519b009c"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2022-04-26T04:37:12.871Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -30,13 +30,13 @@ contract AdManager {
 
     function createAd(uint owner_id, string memory content, uint count) public {
         adCount++;
-        Ad memory newAd;
+
+        Ad storage newAd = advertisements[adCount];
         newAd.ownerId = owner_id;
         newAd.content = content;
         newAd.adCount = count;
         newAd.id = adCount;
         newAd.viewCount = 0;
-        advertisements[adCount] = newAd;
     }
 
     function addViewer(uint adId,  uint userId) public {
@@ -50,5 +50,4 @@ contract AdManager {
         uint userId = ad.viewers[index];
         return userId;
     }
-
 }

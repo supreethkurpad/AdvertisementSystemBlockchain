@@ -12,7 +12,9 @@ contract AdManager {
         uint ownerId;
         uint id;
         string content;
-        uint slots;
+        uint adCount;
+        uint viewCount;
+        mapping(uint => uint) viewers;
     }
 
     struct User {
@@ -28,7 +30,25 @@ contract AdManager {
 
     function createAd(uint owner_id, string memory content, uint count) public {
         adCount++;
-        Ad memory newAd = Ad(owner_id, adCount, content, count);
+        Ad memory newAd;
+        newAd.ownerId = owner_id;
+        newAd.content = content;
+        newAd.adCount = count;
+        newAd.id = adCount;
+        newAd.viewCount = 0;
         advertisements[adCount] = newAd;
     }
+
+    function addViewer(uint adId,  uint userId) public {
+        Ad storage a = advertisements[adId];
+        a.viewCount++;
+        a.viewers[a.viewCount] = userId;
+    }
+
+    function getViewerId(uint adId, uint index) public view returns (uint) {
+        Ad storage ad = advertisements[adId];
+        uint userId = ad.viewers[index];
+        return userId;
+    }
+
 }

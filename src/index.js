@@ -6,25 +6,20 @@ App = {
         await App.loadContract()
         await App.createUser()
     },
+
     loadWeb3: async () => {
         if (window.ethereum) {
             window.web3 = new Web3(ethereum);
             try {
-                // Request account access if needed
                 await ethereum.enable();
-                // Acccounts now exposed
                 web3.eth.sendTransaction({/* ... */});
             } catch (error) {
-                // User denied account access...
             }
         }
-        // Legacy dapp browsers...
         else if (window.web3) {
             window.web3 = new Web3(web3.currentProvider);
-            // Acccounts always exposed
             web3.eth.sendTransaction({/* ... */});
         }
-        // Non-dapp browsers...
         else {
             console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         }
@@ -41,8 +36,27 @@ App = {
     },
     createUser: async () => {
         await App.AdManager.createUser({from:  App.account})
-        console.log(await App.AdManager.users(1))
+        // console.log(await App.AdManager.users(1))
+    },
+    createAd: async (ownerId, content, numAds) => {
+        return await App.AdManager.createAd(ownerId, content, numAds, {from:  App.account});
+    },
+    addViewer: async(adId, userId) => {
+        return await App.AdManager.addViewer.call(adId, userId, {from: App.account});
     }
+}
+
+
+async function createAdRoute () {
+    let content = document.getElementById("content").value;
+    let numAds = Number(document.getElementById("num-ads").value);
+    let x = await App.createAd(1,content, numAds);
+    // x = await App.addViewer(1,1);
+
+    // x = await App.ad()
+
+    x = await App.AdManager.advertisements(1);
+    console.log(x)
 }
 
 window.onload = (event) => {

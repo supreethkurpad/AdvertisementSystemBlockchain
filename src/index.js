@@ -36,7 +36,7 @@ App = {
     loadContract: async() => {
         const adm = await $.getJSON('AdManager.json')
         App.contracts.AdManager = TruffleContract(adm)
-        App.contracts.AdManager.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+        App.contracts.AdManager.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
         App.AdManager = await App.contracts.AdManager.deployed()
         await App.createUser(username)
         uid = await App.AdManager.getUid(username)

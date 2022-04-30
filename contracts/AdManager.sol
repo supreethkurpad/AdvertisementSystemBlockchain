@@ -79,7 +79,6 @@ contract AdManager {
 
     function addViewer(uint adId, string memory interests, address userAddress) public {
         Ad storage a = advertisements[adId];
-
         a.viewCount++;
         Viewer storage v = a.viewers[a.viewCount];
         v.addr = userAddress;

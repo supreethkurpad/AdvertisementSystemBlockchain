@@ -41,11 +41,11 @@ App = {
     loadContract: async() => {
         const adm = await $.getJSON('AdManager.json')
         App.contracts.AdManager = TruffleContract(adm)
-        App.contracts.AdManager.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+        App.contracts.AdManager.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
         App.AdManager = await App.contracts.AdManager.deployed()
     },
-    createUser: async (username) => {
-        await App.AdManager.createUser(username, {from:  App.account})
+    createUser: async (username, interest) => {
+        await App.AdManager.createUser(username, interest, {from:  App.account})
     },
     createAd: async (ownerId, content, numAds) => {
         return await App.AdManager.createAd.sendTransaction(ownerId, content, numAds, {from:  App.account, value: web3.utils.toWei(String(1), 'ether'), gas: 3000000});
@@ -136,4 +136,12 @@ async function login() {
 
 window.onload = (event) => {
     App.load()
+}
+
+async function signup(){
+    let username = document.getElementById("username").value;
+    let interests = document.getElementById("interest").value;
+    let response = await App.createUser(username, interests);
+    alert("User Created Successfully");
+    window.location.replace('http://localhost:3000/index.html')
 }

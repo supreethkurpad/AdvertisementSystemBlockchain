@@ -67,71 +67,13 @@ App = {
     }
 }
 
+function pickN(numAds) {
+    let adCount = App.AdManager.adCount();
+    let ub = Math.min(numAds, adCount);
+    let adsToBeDisplayed = []
+    for(var i = 1; i<=ub; i++) {
 
-async function getAllAds(owner) {
-    let adCount = await App.AdManager.adCount();
-    let ads = [];
-    for(var index = 1; index<=adCount; index++) {
-        let ad = await App.AdManager.advertisements(index);
-        let id = ad["id"];
-        let ownerId = ad["ownerId"].toString();
-        let content = ad["content"]
-        let viewCount = ad["viewCount"]
-
-        if(ownerId === owner) {
-            ads.push({id: id, content:content, viewCount: viewCount})
-        }
     }
-    return ads
-}
-
-async function renderAds() {
-    let ads = await getAllAds(App.uid);
-    let root = document.getElementById("root");
-    
-    ads.forEach(ad => {
-        let htm = '';
-        for(var i = 1; i<=ad["viewCount"]; i++) {
-            htm += `<h4 style="padding: 4px;">Viewer</h4><li><h5>Address</h5><p>${getViewerAddress(ad["id"], i)}</p></li><li><h5>Interests</h5><p>${getViewerInterests(ad["id"], i)}</p></li>`
-        }
-
-        if(htm === '') htm = 'No Viewers Currently';
-        else htm = `<ul>${htm}</ul>`
-
-        root.innerHTML += `<div class = "card">
-        <h3>Advertisement Id</h3>
-        <p>${ad["id"]}</p>
-        <h3>Content</h3>
-        <p>${ad["content"]}</p>
-        <h3>Viewer Details</h3>
-        <ul>
-            <li style="padding: 4px;">
-                <div>
-                    ${htm}
-                </div>
-            </li>
-        </ul>
-        </div>`;
-    })
-}
-async function createAdRoute () {
-    let content = document.getElementById("content").value;
-    let numAds = Number(document.getElementById("slots").value);
-
-    let response = await App.createAd(App.uid, content, numAds);
-    alert("Advertisement Created Successfully\nTransaction Hash: " + response.receipt.transactionHash)
-}
-
-async function login() {
-    let username = document.getElementById("username").value;
-    localStorage.setItem("username", username);
-    let uid = await App.getUid(username);
-    let interests = await App.getUserInterests(uid);
-    localStorage.setItem("uid", uid);
-    localStorage.setItem("interests", interests);
-
-    localStorage.setItem("address", App.account);
-    window.location.replace('http://localhost:3000/ad.html')
 }
 
 window.onload = (event) => {

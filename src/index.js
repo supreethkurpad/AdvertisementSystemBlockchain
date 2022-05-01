@@ -64,7 +64,11 @@ App = {
     },
     addViewer: async (adId, interests, address) => {
         return await App.AdManager.addViewer(adId, interests, address)
+    },
+    getUserInterests: async (id) => {
+        return await App.AdManager.getUserInterests(id);
     }
+
 }
 
 
@@ -127,6 +131,7 @@ async function createAdRoute () {
 
     let response = await App.createAd(App.uid, content, numAds);
     alert("Advertisement Created Successfully\nTransaction Hash: " + response.receipt.transactionHash)
+    window.location.reload();
 }
 
 async function login() {

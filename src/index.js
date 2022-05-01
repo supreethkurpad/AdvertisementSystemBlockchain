@@ -12,7 +12,8 @@ App = {
         App.uid = uid;
 
         console.log(await getAllAds(App.uid));
-        await renderAds()
+        await renderAds();
+        await viewAds();
     },
 
     loadWeb3: async () => {
@@ -90,6 +91,8 @@ async function getAllAds(owner) {
 }
 
 async function renderAds() {
+    // console.log(App.uid);
+
     let ads = await getAllAds(App.uid);
     let root = document.getElementById("root");
     
@@ -113,18 +116,12 @@ async function renderAds() {
         <p>${ad["content"]}</p>
         <h3>View Count</p>
         <p>${ad["viewCount"]}</p>
-        <h3>Viewer Details</h3>
-        <button type="submit" class="btn btn-info" onclick="viewAds()">Viewer Details</button></div>
-        <ul>
-            <li style="padding: 4px;">
-                <div>
-                    ${htm}
-                </div>
-            </li>
-        </ul>
-        </div>`;
+        </div>
+        `;
     })
+    root.innerHTML += `<button type="submit" class="btn btn-info" onclick="window.location.replace('http://localhost:3000/viewerdeets.html')">Viewer Details</button>`;
 }
+
 async function createAdRoute () {
     let content = document.getElementById("content").value;
     let numAds = Number(document.getElementById("slots").value);

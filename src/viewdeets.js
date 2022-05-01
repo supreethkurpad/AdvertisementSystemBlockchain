@@ -1,6 +1,3 @@
-const username = localStorage.getItem("username");
-var uid = localStorage.getItem("uid");
-
 App = {
     contracts: {},
     username: null,
@@ -14,6 +11,8 @@ App = {
         App.username = username;
         App.uid = uid;
 
+        console.log(await getAllAds(App.uid));
+        await viewAdss();
     },
 
     loadWeb3: async () => {
@@ -51,8 +50,8 @@ App = {
     createAd: async (ownerId, content, numAds) => {
         return await App.AdManager.createAd.sendTransaction(ownerId, content, numAds, {from:  App.account, value: web3.utils.toWei(String(1), 'ether'), gas: 3000000});
     },
-    addViewer: async(adId, interest, userId) => {
-        return await App.AdManager.addViewer(adId, interest, userId, {from: App.account});
+    addViewer: async(adId, userId) => {
+        return await App.AdManager.addViewer.call(adId, userId, {from: App.account});
     },
     getViewerAddress: async(adId, index) => {
         return await App.AdManager.getViewerAddress(adId, index, {from:  App.account});
@@ -60,44 +59,65 @@ App = {
     getUid: async(username) => {
         return await App.AdManager.getUid(username)
     },
-    getUserInterests: async (userId) => {
-        return await App.AdManager.getUserInterests(userId);
+    getViewerInterests: async (adId, index) => {
+        return await App.AdManager.getViewerInterests(adId, index);
+    },
+    addViewer: async (adId, interests, address) => {
+        return await App.AdManager.addViewer(adId, interests, address)
+    },
+    getUserInterests: async (id) => {
+        return await App.AdManager.getUserInterests(id);
     }
-}
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+
 }
 
-async function viewAds(){
-    
+async function getAllAds(owner) {
     let adCount = await App.AdManager.adCount();
-    // console.log(adCount)
-    for(i = 1; i<=3; i++) {
-        var interest = localStorage.getItem("interests");
-        var address = localStorage.getItem("address");
-
-        index = getRandomInt(1,adCount);
-    //     // console.log(index);
+    let ads = [];
+    for(var index = 1; index<=adCount; index++) {
         let ad = await App.AdManager.advertisements(index);
         let id = ad["id"];
-        let content = ad["content"].toString();
+        let ownerId = ad["ownerId"].toString();
+        let content = ad["content"]
+        let viewCount = ad["viewCount"]
 
-        document.getElementById('ad_display').innerHTML += '<li class="list-group-item">'+content+' '+id  +'</li>';
-        await App.addViewer(id, interest, address);
-        let after = await App.AdManager.advertisements(index);
-        let vc = after["viewCount"]
-        // console.log(vc);
-    //     console.log(a)
-        console.log("Viewer added")
-    // }
-    // let response = await App.addViewer(1,  1);
-    // let response2 = await App.getViewerId(1, 8);
-    // console.log(response)
-    // console.log(response2)
+        if(ownerId === owner) {
+            ads.push({id: id, content:content, viewCount: viewCount})
+        }
+    }
+    return ads
 }
-}
+
 window.onload = (event) => {
     App.load()  
+}
+
+async function viewAdss(){
+    let ads = await getAllAds(App.uid);
+    let root1 = document.getElementById("viewerdeets");
+    // console.log(ads)
+
+    ads.forEach(async ad => {
+        let htm = `<h4 style="padding: 4px;">Viewers</h4>`;
+        for(var i = 1; i<=ad["viewCount"]; i++) {
+                let add = await App.getViewerAddress(ad["id"], i);
+                let ex = await App.getViewerInterests(ad["id"], i);
+                htm += `<div class = "card" style="background-color:#b0f7ff"><li><h5>Address</h5><small>${add}</small></li><li><h5>Interests</h5><small>${ex}</small></li></div>`;
+        }
+        // console.log(htm)
+
+        if(htm === '') htm = 'No Viewers Currently';
+        else htm = `<ul>${htm}</ul>`
+        root1.innerHTML += `<div class = "card">
+        <h3>Content</h3>
+        <p>${ad["content"]}</p>
+        <ul>
+            <li style="padding: 4px;">
+                <div>
+                    ${htm}
+                </div>
+            </li>
+        </ul>
+        </div>`;
+    })
 }

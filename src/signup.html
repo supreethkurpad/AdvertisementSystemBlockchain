@@ -14,14 +14,33 @@
     </head>
 
     <body>
-        <input type="text" id="username" placeholder="Enter Username"></input>
+        <div class="jumbotron main">
+            <h1 class="display-4">Sign Up</h1>
+            <hr class="my-4">   
+            <p></p>
+            <div class="form-group">
+                <label for="content">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+                <label for="slots">Interests</label>
+                <input type="text" class="form-control" id="interest" placeholder="Enter the interests">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" onclick="signup()">Submit</button>
+
+            <hr class="my-4">
+            <p>Have an account? <a href="./index.html">Log in</a></p>
+            
+        </div>
+
+
+        <!--<input type="text" id="username" placeholder="Enter Username"></input>
         <input type="text" id="interest" placeholder="Enter Interest"></input>
-        <input type="submit" onclick="signup()">
+        <input type="submit" onclick="signup()">-->
         
         </br>
         </br>
 
-        <p>Have an account?</p>
-        <a href="./index.html">Log in</a>
+        
     </body>
 </html>

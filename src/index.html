@@ -14,10 +14,28 @@
     </head>
 
     <body>
-        <input type="text" id="username" placeholder="Enter Username"></input>
-        <input type="submit" onclick="login()">
-        <a href="./signup.html">Sign up</a>
-        <a href="./ad.html">Advertiser</a>
-        <a href="./view.html">Viewer</a>
+
+        <div class="jumbotron main">
+            <h1 class="display-4">Welcome</h1>
+            <hr class="my-4">   
+            <p></p>
+            <div class="form-group">
+                <label for="content">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username">
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg" onclick="login()">Submit</button>
+
+            
+            
+            <hr class="my-4">
+            <p>Choose your Role</p>
+            <button onclick="location.href = './ad.html';" class="btn btn-primary btn-lg">Advertiser</button>
+            <button onclick="location.href = './view.html';" class="btn btn-primary btn-lg">Viewer</button>
+
+            <hr class="my-4">
+            <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+        </div>
+        
     </body>
 </html>

@@ -13,7 +13,7 @@ App = {
         const uid = localStorage.getItem("uid");
         App.username = username;
         App.uid = uid;
-
+        await viewAds();
     },
 
     loadWeb3: async () => {
@@ -73,30 +73,31 @@ function getRandomInt(min, max) {
 async function viewAds(){
     
     let adCount = await App.AdManager.adCount();
-    // console.log(adCount)
+    let root2 = document.getElementById("ad_display");
+    let htm = '';
     for(i = 1; i<=3; i++) {
         var interest = localStorage.getItem("interests");
         var address = localStorage.getItem("address");
 
         index = getRandomInt(1,adCount);
-    //     // console.log(index);
         let ad = await App.AdManager.advertisements(index);
         let id = ad["id"];
         let content = ad["content"].toString();
-
-        document.getElementById('ad_display').innerHTML += '<li class="list-group-item">'+content+' '+id  +'</li>';
+        let dis = "Lorem ipsum dolor sit amet. Ut eveniet consequatur hic possimus nisi sed sunt eligendi rem laboriosam rerum";
+        htm += `<div class = "card" style="background-color:#b0f7ff"><li class="list-group-item" style="padding: 4px;"><h5>${content}</h5><small>${dis}</small></li></div><br><br><br>`;;
         await App.addViewer(id, interest, address);
-        let after = await App.AdManager.advertisements(index);
-        let vc = after["viewCount"]
-        // console.log(vc);
-    //     console.log(a)
         console.log("Viewer added")
-    // }
-    // let response = await App.addViewer(1,  1);
-    // let response2 = await App.getViewerId(1, 8);
-    // console.log(response)
-    // console.log(response2)
+   
 }
+        htm = `<ul>${htm}</ul>`;
+        root2.innerHTML += `<div class = "card">
+        <ul>
+                <div>
+                    ${htm}
+                </div>
+        </ul>
+        </div>`;
+
 }
 window.onload = (event) => {
     App.load()  

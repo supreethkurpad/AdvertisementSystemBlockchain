@@ -95,18 +95,17 @@ window.onload = (event) => {
 async function viewAdss(){
     let ads = await getAllAds(App.uid);
     let root1 = document.getElementById("viewerdeets");
-    // console.log(ads)
-
+    
     ads.forEach(async ad => {
         let htm = `<h4 style="padding: 4px;">Viewers</h4>`;
         for(var i = 1; i<=ad["viewCount"]; i++) {
+                count = 1;
                 let add = await App.getViewerAddress(ad["id"], i);
                 let ex = await App.getViewerInterests(ad["id"], i);
                 htm += `<div class = "card" style="background-color:#b0f7ff"><li><h5>Address</h5><small>${add}</small></li><li><h5>Interests</h5><small>${ex}</small></li></div>`;
         }
-        // console.log(htm)
-
-        if(htm === '') htm = 'No Viewers Currently';
+        
+        if(ad["viewCount"] == 0) htm = 'No Viewers Currently';
         else htm = `<ul>${htm}</ul>`
         root1.innerHTML += `<div class = "card">
         <h3>Content</h3>

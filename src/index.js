@@ -53,14 +53,14 @@ App = {
     addViewer: async(adId, userId) => {
         return await App.AdManager.addViewer.call(adId, userId, {from: App.account});
     },
-    getViewerId: async(adId, index) => {
-        return await App.AdManager.getViewerId(adId, index, {from:  App.account});
+    getViewerAddress: async(adId, index) => {
+        return await App.AdManager.getViewerAddress(adId, index, {from:  App.account});
     },
     getUid: async(username) => {
         return await App.AdManager.getUid(username)
     },
-    getUserInterests: async (userId) => {
-        return await App.AdManager.getUserInterests(userId);
+    getViewerInterests: async (adId, index) => {
+        return await App.AdManager.getViewerInterests(adId, index);
     },
     addViewer: async (adId, interests, address) => {
         return await App.AdManager.addViewer(adId, interests, address)
@@ -89,11 +89,15 @@ async function renderAds() {
     let ads = await getAllAds(App.uid);
     let root = document.getElementById("root");
     
-    ads.forEach(ad => {
+    
+    ads.forEach(async ad => {
         let htm = '';
         for(var i = 1; i<=ad["viewCount"]; i++) {
-            htm += `<h4 style="padding: 4px;">Viewer</h4><li><h5>Address</h5><p>${getViewerAddress(ad["id"], i)}</p></li><li><h5>Interests</h5><p>${getViewerInterests(ad["id"], i)}</p></li>`
+            let add = await App.getViewerAddress(ad["id"], i);
+            let ex = await App.getViewerInterests(ad["id"], i);
+            htm += `<h4 style="padding: 4px;">Viewer</h4><li><h5>Address</h5><small>${add}</small></li><li><h5>Interests</h5><small>${ex}</small></li>`;
         }
+    
 
         if(htm === '') htm = 'No Viewers Currently';
         else htm = `<ul>${htm}</ul>`
@@ -103,7 +107,10 @@ async function renderAds() {
         <p>${ad["id"]}</p>
         <h3>Content</h3>
         <p>${ad["content"]}</p>
+        <h3>View Count</p>
+        <p>${ad["viewCount"]}</p>
         <h3>Viewer Details</h3>
+        <button type="submit" class="btn btn-info" onclick="viewAds()">Viewer Details</button></div>
         <ul>
             <li style="padding: 4px;">
                 <div>

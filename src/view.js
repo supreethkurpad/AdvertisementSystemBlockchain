@@ -54,8 +54,8 @@ App = {
     addViewer: async(adId, interest, userId) => {
         return await App.AdManager.addViewer(adId, interest, userId, {from: App.account});
     },
-    getViewerId: async(adId, index) => {
-        return await App.AdManager.getViewerId(adId, index, {from:  App.account});
+    getViewerAddress: async(adId, index) => {
+        return await App.AdManager.getViewerAddress(adId, index, {from:  App.account});
     },
     getUid: async(username) => {
         return await App.AdManager.getUid(username)
@@ -83,12 +83,12 @@ async function viewAds(){
         let ad = await App.AdManager.advertisements(index);
         let id = ad["id"];
         let content = ad["content"].toString();
-    //     console.log(id)
-    //     // console.log(content)
 
         document.getElementById('ad_display').innerHTML += '<li class="list-group-item">'+content+' '+id  +'</li>';
-    //     // console.log("id="+id+" "+"uid="+uid)
         await App.addViewer(id, interest, address);
+        let after = await App.AdManager.advertisements(index);
+        let vc = after["viewCount"]
+        console.log(vc);
     //     console.log(a)
         console.log("Viewer added")
     // }

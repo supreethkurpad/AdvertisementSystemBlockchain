@@ -91,7 +91,7 @@ async function getAllAds(owner) {
 }
 
 async function renderAds() {
-    // console.log(App.uid);
+   
 
     let ads = await getAllAds(App.uid);
     let root = document.getElementById("root");
@@ -110,16 +110,16 @@ async function renderAds() {
         else htm = `<ul>${htm}</ul>`
 
         root.innerHTML += `<div class = "card">
-        <h3>Advertisement Id</h3>
+        <h4>Advertisement Id </h4>
         <p>${ad["id"]}</p>
-        <h3>Content</h3>
-        <p>${ad["content"]}</p>
-        <h3>View Count</p>
+        <h4>Content</h4>
+        <p><b>${ad["content"]}<b></p>
+        <h4>View Count</h4>
         <p>${ad["viewCount"]}</p>
         </div>
         `;
     })
-    root.innerHTML += `<button type="submit" class="btn btn-info" onclick="window.location.replace('http://localhost:3000/viewerdeets.html')">Viewer Details</button>`;
+    
 }
 
 async function createAdRoute () {

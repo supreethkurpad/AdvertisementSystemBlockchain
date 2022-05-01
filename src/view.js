@@ -84,7 +84,7 @@ async function viewAds(){
         let id = ad["id"];
         let content = ad["content"].toString();
         let dis = "Lorem ipsum dolor sit amet. Ut eveniet consequatur hic possimus nisi sed sunt eligendi rem laboriosam rerum";
-        htm += `<div class = "card" style="background-color:#b0f7ff"><li class="list-group-item" style="padding: 4px;"><h5>${content}</h5><small>${dis}</small></li></div><br><br><br>`;;
+        htm += `<div class = "card" style="background-color:#b0f7ff"><li class="list-group-item" style="padding: 4px;"><h4><b>${content}</b></h4><small>${dis}</small></li></div><br><br><br>`;;
         await App.addViewer(id, interest, address);
         console.log("Viewer added")
    

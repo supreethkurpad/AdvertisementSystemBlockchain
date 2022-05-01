@@ -109,7 +109,7 @@ async function viewAdss(){
         else htm = `<ul>${htm}</ul>`
         root1.innerHTML += `<div class = "card">
         <h3>Content</h3>
-        <p>${ad["content"]}</p>
+        <p><b>${ad["content"]}</b></p>
         <ul>
             <li style="padding: 4px;">
                 <div>

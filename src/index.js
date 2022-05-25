@@ -13,7 +13,7 @@ App = {
 
         console.log(await getAllAds(App.uid));
         await renderAds();
-        await viewAds();
+        //await viewAds();
     },
 
     loadWeb3: async () => {
@@ -140,7 +140,7 @@ async function login() {
     localStorage.setItem("interests", interests);
 
     localStorage.setItem("address", App.account);
-    window.location.replace('http://localhost:3000/ad.html')
+    window.location.replace('http://localhost:3000/')
 }
 
 window.onload = (event) => {
